@@ -25,8 +25,8 @@ export class Project {
   @ManyToOne(() => User, (user) => user.projects)
   user: User;
 
-  @ManyToOne(() => Category, (category) => category.projects)
-  category: Category;
+  @OneToMany(() => Category, (category) => category.project)
+  categories: Category;
 
   @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
   created_at: Date;
