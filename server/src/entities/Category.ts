@@ -20,7 +20,7 @@ export class Category {
   name: string;
 
   @Column()
-  is_default: boolean;
+  isDefault: boolean;
 
   @ManyToOne(() => Project, (project) => project.categories)
   project: Project;
