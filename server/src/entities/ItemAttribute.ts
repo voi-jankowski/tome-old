@@ -15,8 +15,17 @@ export class ItemAttribute {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: true }) // Allow null values
-  value: string;
+  @Column({ type: "varchar", nullable: true }) // String values
+  stringValue: string | null;
+
+  @Column({ type: "int", nullable: true }) // Number values
+  numberValue: number | null;
+
+  @Column({ type: "boolean", nullable: true }) // Boolean values
+  booleanValue: boolean | null;
+
+  @Column({ type: "date", nullable: true }) // Date values
+  dateValue: Date | null;
 
   @ManyToOne(() => Item, (item) => item.itemAttributes)
   item: Item;

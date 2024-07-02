@@ -10,6 +10,15 @@ import {
 import { Category } from "./Category";
 import { ItemAttribute } from "./ItemAttribute";
 
+export enum AttributeType {
+  STRING = "string",
+  NUMBER = "number",
+  DATE = "date",
+  TEXT = "text",
+  DATETIME = "datetime",
+  BOOLEAN = "boolean",
+}
+
 @Entity("attributes")
 export class Attribute {
   @PrimaryGeneratedColumn()
@@ -18,8 +27,8 @@ export class Attribute {
   @Column()
   name: string;
 
-  @Column()
-  type: string;
+  @Column({ type: "enum", enum: AttributeType, default: AttributeType.STRING })
+  type: AttributeType;
 
   @Column()
   isDefault: boolean;
