@@ -20,6 +20,6 @@ export const AppDataSource = new DataSource({
   synchronize: false, // set to true to auto-generate tables, but only in dev mode (not for production)
   logging: true, // set to true to log SQL queries
   entities: [User, Project, Category, Item, Attribute, ItemAttribute],
-  migrations: [`${__dirname}/migrations/*,{ts,js}`],
+  migrations: [`${__dirname}/migrations/*`],
   subscribers: [],
 });

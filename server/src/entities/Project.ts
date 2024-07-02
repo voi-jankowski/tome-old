@@ -21,7 +21,6 @@ export class Project {
   @Column()
   description: string;
 
-  @Column()
   @ManyToOne(() => User, (user) => user.projects)
   user: User;
 

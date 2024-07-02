@@ -18,7 +18,6 @@ export class Item {
   @Column()
   name: string;
 
-  @Column()
   @ManyToOne(() => Category, (category) => category.items)
   category: Category;
 
