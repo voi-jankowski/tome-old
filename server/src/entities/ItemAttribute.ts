@@ -15,7 +15,7 @@ export class ItemAttribute {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true }) // Allow null values
   value: string;
 
   @ManyToOne(() => Item, (item) => item.itemAttributes)
